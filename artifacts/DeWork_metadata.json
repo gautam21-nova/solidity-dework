@@ -1,0 +1,165 @@
+{
+	"compiler": {
+		"version": "0.8.37+commit.f401782d"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_initialAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "employeeProfiles",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isHiring",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getEmployeeProfile",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "bool",
+								"name": "isHiring",
+								"type": "bool"
+							},
+							{
+								"internalType": "address",
+								"name": "wallet",
+								"type": "address"
+							}
+						],
+						"internalType": "struct EmployeeProfile[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalNumEmployees",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isHiring",
+						"type": "bool"
+					}
+				],
+				"name": "registerNewEmployee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/DeWork.sol": "DeWork"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/DeWork.sol": {
+			"keccak256": "0x7767719ecc5f48d7e44bcd8e3b40208414ab654af983a7efada53721e0386c36",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c9a4d96efc0d46574b8184e3bc3c72709daffd9207eeecb96aadc0e16e2c9f26",
+				"dweb:/ipfs/QmZKgmcg268PjzHbZgmU3Ahdby88y1r5CdsJ8y3JYEj4Yb"
+			]
+		},
+		"contracts/types/Employee.sol": {
+			"keccak256": "0x0879ec817bf6bb911d671a2a7e21517f50bcf29c93deef56a7d3a0846409c5e5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b4f3c28f6f2df673557a00fb5fda5333f07de3031c4b0a6dc9494d9f24918c0c",
+				"dweb:/ipfs/Qmd2twvRXBhL5mD5gpSDzrypqsZGEZZmjPHR15MHGKk86c"
+			]
+		}
+	},
+	"version": 1
+}
