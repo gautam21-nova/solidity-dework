@@ -3,6 +3,15 @@
 pragma solidity ^0.8.3;
 
 
+struct FreelancerProfile{
+    uint256 id;
+    string name;
+    address wallet;
+    uint256 yearsOfExperience;
+    bool isAvail;
+    uint256 hourlyPaymentInWei;
+}
+
 struct EmployerProfile{
     uint256 id;
     string name;

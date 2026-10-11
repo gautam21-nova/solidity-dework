@@ -56,7 +56,23 @@
 						"type": "address"
 					}
 				],
-				"name": "DeWork_UnAuthorized",
+				"name": "DeWork_UnAuthorizedEmployer",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "freeLancerId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					}
+				],
+				"name": "DeWork_UnAuthorizedFreeLancer",
 				"type": "error"
 			},
 			{
@@ -175,6 +191,69 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "freeLancerIdToAdress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "freelancers",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "wallet",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "yearsOfExperience",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isAvail",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "hourlyPaymentInWei",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "empId",
 						"type": "uint256"
 					}
@@ -279,7 +358,65 @@
 			},
 			{
 				"inputs": [],
+				"name": "getFreelancerProfile",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "wallet",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "yearsOfExperience",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isAvail",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "hourlyPaymentInWei",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct FreelancerProfile[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getTotalNumEmployees",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalNumFreeLancer",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -330,6 +467,29 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "paymentInWei",
+						"type": "uint256"
+					}
+				],
+				"name": "registerFreelancerProfile",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -361,19 +521,19 @@
 	},
 	"sources": {
 		"contracts/DeWork.sol": {
-			"keccak256": "0x519b8bd2f767fbac3df1ac5c7fefdb7457b91a9beb4429d285792af8bbb1ad3f",
+			"keccak256": "0x7edcade7ce5637c87d90df3869810b1d36b337f71f1d20bc96c8d2f2a21c22f7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3c7d7d50f632a8785b6102cb65bb4c0fdf852ee8161ff1e5a1e379bcf6ddf064",
-				"dweb:/ipfs/QmacvGddoBSdBMAuKgFZ8GJ9zV6yo6WisW44BSHWoZNjMo"
+				"bzz-raw://3262343661b83f8432f8efc0f4edd55e18644a4e301ca6611c69fecfd59e36fa",
+				"dweb:/ipfs/QmbwzwZYGYXDk8FEeq7yXkAvceMgE4ji2rHduU8xGhffpw"
 			]
 		},
 		"contracts/types/Employee.sol": {
-			"keccak256": "0x9ca8355035c707902331089f12d3509c7c43d76990aa0d0e54411ffd57ddc39e",
+			"keccak256": "0xb45634a1a22e8ada059f3ba317ea31279ee7e0801bb57a6a8978c3ce97379aa1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6315121b244d6c77426f673becca34edc34d5ade980177e9ac8c7cb94b51a1a5",
-				"dweb:/ipfs/QmTmCp9Uv3ahYK65HXeReXGmdE2tUNkWHHWqQTAAK2afR9"
+				"bzz-raw://d51f43391a1b50422fcb7f0dd725bc2eed9fffa72cb1397da532b8c05911a787",
+				"dweb:/ipfs/QmZVbWQXF58URFSyorvZDW2bijLKFDuU6jKTqjgrK8igrq"
 			]
 		}
 	},
