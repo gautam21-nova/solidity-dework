@@ -12,6 +12,8 @@ contract DeWork{
     mapping (uint256=>address) public employees;
     event EmployeeRegistered (uint256 employeeId,address caller);
     error DeWork_InvalidFee (uint256 actualFee, uint256 passedFee);
+    error DeWork_FreelancerNotFreetoWork(uint256 jobId);
+    error  DeWork_UnAuthorized(uint256 employerId,address caller);
 
     constructor (address _initialAddress){
         initialAddress = _initialAddress;
@@ -37,7 +39,12 @@ contract DeWork{
     function getEmployeeProfile() public view returns(EmployerProfile[] memory){
         return employeeProfiles;
     }
-    function _getEmployerProfile(uint256 empId) internal view returns (EmployerProfile memory){
+
+    function getCreatedJobListId(uint256 empId) public view returns (uint256){
+        return employeeProfiles[empId].jobLists.length;
+    }
+
+    function _getEmployerProfile(uint256 empId) internal view returns (EmployerProfile storage){
       return  employeeProfiles[empId];
     }
 
@@ -46,8 +53,10 @@ contract DeWork{
                 if (msg.value != fixedPrice){
                     revert DeWork_InvalidFee(msg.value,fixedPrice);
                 }
+                EmployerProfile storage employerProfile = _getEmployerProfile(empId);
+                uint256 jobId = getCreatedJobListId(empId);
                 JobListings memory jobListings = JobListings({
-                    id:0,
+                    id:jobId,
                     title:jobListingInput.title,
                     description:jobListingInput.job_description,
                     deadlineTimestamp:jobListingInput.deadline,
@@ -57,8 +66,33 @@ contract DeWork{
                     hasHiredFreelancer:false,
                     isPaid:false
                 });
-                empId;
-                jobListings;
+                employerProfile.jobLists.push(jobListings);
     }
 
+    function _requireFreelancer(JobListings memory job) internal pure{
+        if (job.isOpentoWork!=true){
+            revert DeWork_FreelancerNotFreetoWork(job.id);
+        }
+    }
+
+    function _getJobs(uint256 employerId, uint256 jobId) internal view returns(JobListings storage){
+        return employeeProfiles[employerId].jobLists[jobId];
+    }
+
+    function hireFreelancer(uint256 employerId,uint256 freelancerId,uint256 jobId) public{
+        
+        address employer = employees[employerId];
+
+        if (employer!=msg.sender || employer==address(0)){
+            revert DeWork_UnAuthorized(employerId,msg.sender);
+        }
+        
+        JobListings storage newjobListings = _getJobs(employerId,jobId);
+        newjobListings.hiredFreelancerId = freelancerId;
+        newjobListings.hasHiredFreelancer = true;
+        newjobListings.isPaid = true;
+
+        newjobListings.isOpentoWork = false;
+
+    }
 }
