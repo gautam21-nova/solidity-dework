@@ -9,9 +9,10 @@ contract DeWork{
 
     EmployeeProfile[] public employeeProfiles;
     address initialAddress;
+    mapping (uint256=>address) public employees;
 
     constructor (address _initialAddress){
-        initialAddress=_initialAddress;
+        initialAddress = _initialAddress;
     }
 
     function registerNewEmployee(string calldata _name,bool _isHiring) external {
@@ -23,6 +24,7 @@ contract DeWork{
             wallet:msg.sender
         });
         employeeProfiles.push(newEmployeeProfile);
+        employees[noEmployee] = msg.sender;
     }
     function getTotalNumEmployees() public view returns(uint256){
             return employeeProfiles.length;

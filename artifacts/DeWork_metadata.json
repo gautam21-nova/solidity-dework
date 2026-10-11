@@ -51,6 +51,25 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "employees",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "getEmployeeProfile",
 				"outputs": [
@@ -145,11 +164,11 @@
 	},
 	"sources": {
 		"contracts/DeWork.sol": {
-			"keccak256": "0x627186e3e553d008eb5a13c03503be861d3f163c769adad0a7ef73ef450495d5",
+			"keccak256": "0x9f6ede3eb1cfc777db6bdeebd37b4cfd2fb5b22f64339b68a2b8a0b2064b97fe",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3817a475fa8b579a6ed7bc2337d7d1d3ad04d3f72157afe7c3b306fbc30cc29d",
-				"dweb:/ipfs/QmVexV7d8rptqB1KGe83sBGPRNsGasaZDA569XQHMPYEEr"
+				"bzz-raw://39d6fa343b85e3cb34372aa7447bf14deae974481f57cadb857cf0062bb4fe88",
+				"dweb:/ipfs/QmfVvxyK6VjKFJYf9HFEtpTg3jyPYaco6K4X38MpoqrTgW"
 			]
 		},
 		"contracts/types/Employee.sol": {
