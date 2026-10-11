@@ -82,7 +82,7 @@
 							}
 						],
 						"internalType": "struct CreateJobListiningProfile",
-						"name": "jobListing",
+						"name": "jobListingInput",
 						"type": "tuple"
 					}
 				],
@@ -169,9 +169,61 @@
 								"internalType": "address",
 								"name": "wallet",
 								"type": "address"
+							},
+							{
+								"components": [
+									{
+										"internalType": "uint256",
+										"name": "id",
+										"type": "uint256"
+									},
+									{
+										"internalType": "string",
+										"name": "title",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "description",
+										"type": "string"
+									},
+									{
+										"internalType": "uint256",
+										"name": "deadlineTimestamp",
+										"type": "uint256"
+									},
+									{
+										"internalType": "bool",
+										"name": "isOpentoWork",
+										"type": "bool"
+									},
+									{
+										"internalType": "uint256",
+										"name": "fixedPriceInWei",
+										"type": "uint256"
+									},
+									{
+										"internalType": "uint256",
+										"name": "hiredFreelancerId",
+										"type": "uint256"
+									},
+									{
+										"internalType": "bool",
+										"name": "hasHiredFreelancer",
+										"type": "bool"
+									},
+									{
+										"internalType": "bool",
+										"name": "isPaid",
+										"type": "bool"
+									}
+								],
+								"internalType": "struct JobListings[]",
+								"name": "jobLists",
+								"type": "tuple[]"
 							}
 						],
-						"internalType": "struct EmployeeProfile[]",
+						"internalType": "struct EmployerProfile[]",
 						"name": "",
 						"type": "tuple[]"
 					}
@@ -205,7 +257,7 @@
 						"type": "bool"
 					}
 				],
-				"name": "registerNewEmployee",
+				"name": "registerEmployerProfile",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -232,26 +284,27 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
-		"remappings": []
+		"remappings": [],
+		"viaIR": true
 	},
 	"sources": {
 		"contracts/DeWork.sol": {
-			"keccak256": "0x0b64c0803c815ddf36cacdd74f49c45c383b5ac4e609726fdd33891cc63db6db",
+			"keccak256": "0xd1c9c74cb560b94354aee81a434ed658b915c61182a5096844105da271484c99",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://92050dcb9fc3f451de113da8059998696a2a845d09ce1e82d4e3a4b4001f94bc",
-				"dweb:/ipfs/QmUA2UNJYLF7gbW6mubZrW8BPCrjgydJQ9SHX5Woh2BPmF"
+				"bzz-raw://de3d4dbf1c5f1f86b5eada955c18889a86c878cbcb7a7954f74d634e2f603986",
+				"dweb:/ipfs/QmRyaAMqsdE19rC6f8QNtfZwcJHXgZSyeSrwnpMqU5YSUu"
 			]
 		},
 		"contracts/types/Employee.sol": {
-			"keccak256": "0xad8e0d919a12480ec00a521ae0950dffbcf43bf4929facd3d4abde45d68cf865",
+			"keccak256": "0x9ca8355035c707902331089f12d3509c7c43d76990aa0d0e54411ffd57ddc39e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://681496487cdf6df2098c75971bb49e278d76badaac68a8c078de76cb7c6882a0",
-				"dweb:/ipfs/QmPtW8kKB5arjEsnQSj3AJNj2mK1TC1mnRqS8ryWBr7T1V"
+				"bzz-raw://6315121b244d6c77426f673becca34edc34d5ade980177e9ac8c7cb94b51a1a5",
+				"dweb:/ipfs/QmTmCp9Uv3ahYK65HXeReXGmdE2tUNkWHHWqQTAAK2afR9"
 			]
 		}
 	},

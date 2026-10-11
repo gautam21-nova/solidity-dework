@@ -2,12 +2,12 @@
 
 pragma solidity ^0.8.3;
 
-import { EmployeeProfile,CreateJobListiningProfile } from "./types/Employee.sol";
+import { EmployerProfile,CreateJobListiningProfile,JobListings } from "./types/Employee.sol";
 
 
 contract DeWork{
 
-    EmployeeProfile[] public employeeProfiles;
+    EmployerProfile[] public employeeProfiles;
     address initialAddress;
     mapping (uint256=>address) public employees;
     event EmployeeRegistered (uint256 employeeId,address caller);
@@ -17,15 +17,16 @@ contract DeWork{
         initialAddress = _initialAddress;
     }
 
-    function registerNewEmployee(string calldata _name,bool _isHiring) external {
+    function registerEmployerProfile(string calldata _name,bool _isHiring) external {
         uint256 noEmployee = getTotalNumEmployees();
-        EmployeeProfile memory newEmployeeProfile = EmployeeProfile({
+        EmployerProfile memory newEmployerProfile = EmployerProfile({
             id:noEmployee,
             name:_name,
             isHiring:_isHiring,
-            wallet:msg.sender
+            wallet:msg.sender,
+            jobLists:new JobListings[](0)
         });
-        employeeProfiles.push(newEmployeeProfile);
+        employeeProfiles.push(newEmployerProfile);
         employees[noEmployee] = msg.sender;
         emit EmployeeRegistered(noEmployee, msg.sender);
     }
@@ -33,16 +34,31 @@ contract DeWork{
             return employeeProfiles.length;
     }
 
-    function getEmployeeProfile() public view returns(EmployeeProfile[] memory){
+    function getEmployeeProfile() public view returns(EmployerProfile[] memory){
         return employeeProfiles;
     }
+    function _getEmployerProfile(uint256 empId) internal view returns (EmployerProfile memory){
+      return  employeeProfiles[empId];
+    }
 
-    function createJobListining (uint256 empId,CreateJobListiningProfile calldata jobListing) external payable {
-                uint256 fixedPrice = jobListing.fixed_pricein_wei;
+    function createJobListining (uint256 empId,CreateJobListiningProfile calldata jobListingInput) external payable {
+                uint256 fixedPrice = jobListingInput.fixed_pricein_wei;
                 if (msg.value != fixedPrice){
                     revert DeWork_InvalidFee(msg.value,fixedPrice);
                 }
+                JobListings memory jobListings = JobListings({
+                    id:0,
+                    title:jobListingInput.title,
+                    description:jobListingInput.job_description,
+                    deadlineTimestamp:jobListingInput.deadline,
+                    isOpentoWork:true,
+                    fixedPriceInWei:jobListingInput.fixed_pricein_wei,
+                    hiredFreelancerId:0,
+                    hasHiredFreelancer:false,
+                    isPaid:false
+                });
                 empId;
+                jobListings;
     }
 
 }
