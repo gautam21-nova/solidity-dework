@@ -19,13 +19,5 @@
         "file": "contracts/types/Employee.sol"
       }
     }
-  },
-  "contracts/types/Employee.sol": {
-    "__sources__": {
-      "contracts/types/Employee.sol": {
-        "content": "//  SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.3;\r\n\r\n\r\nstruct EmployeeProfile{\r\n    uint256 id;\r\n    string name;\r\n    bool isHiring;\r\n    address wallet;\r\n}\r\n\r\nstruct CreateJobListiningProfile{\r\n    string title;\r\n    string job_description;\r\n    uint256 deadline;\r\n    uint256 fixed_pricein_wei;\r\n}",
-        "file": "contracts/types/Employee.sol"
-      }
-    }
   }
 }
