@@ -17,6 +17,22 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "actualFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "passedFee",
+						"type": "uint256"
+					}
+				],
+				"name": "DeWork_InvalidFee",
+				"type": "error"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -34,6 +50,46 @@
 				],
 				"name": "EmployeeRegistered",
 				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "empId",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "job_description",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deadline",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "fixed_pricein_wei",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CreateJobListiningProfile",
+						"name": "jobListing",
+						"type": "tuple"
+					}
+				],
+				"name": "createJobListining",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
 			},
 			{
 				"inputs": [
@@ -183,19 +239,19 @@
 	},
 	"sources": {
 		"contracts/DeWork.sol": {
-			"keccak256": "0x06d43d1a786703b370a14f234d545376b8c6dcd91877dc073d4ea3b56c728e95",
+			"keccak256": "0x0b64c0803c815ddf36cacdd74f49c45c383b5ac4e609726fdd33891cc63db6db",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8fc147eecfb44817bc2139e09bfe0fa90beeecbf3017f4b24a0ed38d76198cc0",
-				"dweb:/ipfs/QmPETCniK2AuD8vLrpunwKrJ1cBXwAkxvhQ3KGWVDDNnFE"
+				"bzz-raw://92050dcb9fc3f451de113da8059998696a2a845d09ce1e82d4e3a4b4001f94bc",
+				"dweb:/ipfs/QmUA2UNJYLF7gbW6mubZrW8BPCrjgydJQ9SHX5Woh2BPmF"
 			]
 		},
 		"contracts/types/Employee.sol": {
-			"keccak256": "0x0879ec817bf6bb911d671a2a7e21517f50bcf29c93deef56a7d3a0846409c5e5",
+			"keccak256": "0xad8e0d919a12480ec00a521ae0950dffbcf43bf4929facd3d4abde45d68cf865",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b4f3c28f6f2df673557a00fb5fda5333f07de3031c4b0a6dc9494d9f24918c0c",
-				"dweb:/ipfs/Qmd2twvRXBhL5mD5gpSDzrypqsZGEZZmjPHR15MHGKk86c"
+				"bzz-raw://681496487cdf6df2098c75971bb49e278d76badaac68a8c078de76cb7c6882a0",
+				"dweb:/ipfs/QmPtW8kKB5arjEsnQSj3AJNj2mK1TC1mnRqS8ryWBr7T1V"
 			]
 		}
 	},

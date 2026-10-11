@@ -9,3 +9,10 @@ struct EmployeeProfile{
     bool isHiring;
     address wallet;
 }
+
+struct CreateJobListiningProfile{
+    string title;
+    string job_description;
+    uint256 deadline;
+    uint256 fixed_pricein_wei;
+}
