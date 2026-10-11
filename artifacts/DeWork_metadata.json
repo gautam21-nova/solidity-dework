@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.37+commit.f401782d"
+		"version": "0.8.34+commit.80d5c536"
 	},
 	"language": "Solidity",
 	"output": {
@@ -145,11 +145,11 @@
 	},
 	"sources": {
 		"contracts/DeWork.sol": {
-			"keccak256": "0x7767719ecc5f48d7e44bcd8e3b40208414ab654af983a7efada53721e0386c36",
+			"keccak256": "0x627186e3e553d008eb5a13c03503be861d3f163c769adad0a7ef73ef450495d5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c9a4d96efc0d46574b8184e3bc3c72709daffd9207eeecb96aadc0e16e2c9f26",
-				"dweb:/ipfs/QmZKgmcg268PjzHbZgmU3Ahdby88y1r5CdsJ8y3JYEj4Yb"
+				"bzz-raw://3817a475fa8b579a6ed7bc2337d7d1d3ad04d3f72157afe7c3b306fbc30cc29d",
+				"dweb:/ipfs/QmVexV7d8rptqB1KGe83sBGPRNsGasaZDA569XQHMPYEEr"
 			]
 		},
 		"contracts/types/Employee.sol": {

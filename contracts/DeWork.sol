@@ -14,7 +14,7 @@ contract DeWork{
         initialAddress=_initialAddress;
     }
 
-    function registerNewEmployee(string calldata _name,bool _isHiring) public {
+    function registerNewEmployee(string calldata _name,bool _isHiring) external {
         uint256 noEmployee = getTotalNumEmployees();
         EmployeeProfile memory newEmployeeProfile = EmployeeProfile({
             id:noEmployee,
