@@ -17,6 +17,25 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "employeeId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					}
+				],
+				"name": "EmployeeRegistered",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -164,11 +183,11 @@
 	},
 	"sources": {
 		"contracts/DeWork.sol": {
-			"keccak256": "0x9f6ede3eb1cfc777db6bdeebd37b4cfd2fb5b22f64339b68a2b8a0b2064b97fe",
+			"keccak256": "0x06d43d1a786703b370a14f234d545376b8c6dcd91877dc073d4ea3b56c728e95",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://39d6fa343b85e3cb34372aa7447bf14deae974481f57cadb857cf0062bb4fe88",
-				"dweb:/ipfs/QmfVvxyK6VjKFJYf9HFEtpTg3jyPYaco6K4X38MpoqrTgW"
+				"bzz-raw://8fc147eecfb44817bc2139e09bfe0fa90beeecbf3017f4b24a0ed38d76198cc0",
+				"dweb:/ipfs/QmPETCniK2AuD8vLrpunwKrJ1cBXwAkxvhQ3KGWVDDNnFE"
 			]
 		},
 		"contracts/types/Employee.sol": {

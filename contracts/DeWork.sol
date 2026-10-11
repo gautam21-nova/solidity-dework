@@ -10,6 +10,7 @@ contract DeWork{
     EmployeeProfile[] public employeeProfiles;
     address initialAddress;
     mapping (uint256=>address) public employees;
+    event EmployeeRegistered (uint256 employeeId,address caller);
 
     constructor (address _initialAddress){
         initialAddress = _initialAddress;
@@ -25,6 +26,7 @@ contract DeWork{
         });
         employeeProfiles.push(newEmployeeProfile);
         employees[noEmployee] = msg.sender;
+        emit EmployeeRegistered(noEmployee, msg.sender);
     }
     function getTotalNumEmployees() public view returns(uint256){
             return employeeProfiles.length;
